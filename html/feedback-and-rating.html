@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Feedback and Rating</title>
+</head>
+<body>
+    <center>
+    <h1>Feedback and Rating</h1>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="complaint-validation.html">Complaint Validation</a> |
+        <a href="complaint-registration.html">Complaint Registration</a> |
+        <a href="status-tracking.html">Status Tracking</a> |
+        <a href="feedback-and-rating.html">Feedback and Rating</a>
+    </nav>
+    <hr>
+
+    <form id="feedbackForm">
+        <p>
+            <label for="complaintId">Complaint ID:</label><br>
+            <input type="number" id="complaintId" name="complaintId" min="1" step="1" required>
+        </p>
+        <p>
+            <label for="status">Status:</label><br>
+            <input type="text" id="status" name="status" required>
+        </p>
+        <p id="ratingPrompt">
+            <label for="rating">Rate the resolution (1-5):</label><br>
+            <input type="number" id="rating" name="rating" step="1">
+        </p>
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+    <div id="feedbackResult"></div>
+    </center>
+    <center>
+    <footer>
+        <p>&copy; 2026 CivicFix Team. All rights reserved.</p>
+    </footer>
+    </center>
+</body>
+</html>

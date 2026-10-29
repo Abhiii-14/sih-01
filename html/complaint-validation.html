@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Complaint Validation</title>
+</head>
+<body>
+    <center>
+    <h1>Complaint Validation</h1>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="complaint-validation.html">Complaint Validation</a> |
+        <a href="complaint-registration.html">Complaint Registration</a> |
+        <a href="status-tracking.html">Status Tracking</a> |
+        <a href="feedback-and-rating.html">Feedback and Rating</a>
+    </nav>
+    <hr>
+
+    <form id="validationForm">
+        <p>
+            <label for="citizenName">Citizen Name:</label><br>
+            <input type="text" id="citizenName" name="citizenName">
+        </p>
+        <p>
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" rows="4" cols="35"></textarea>
+        </p>
+        <p>
+            <input type="checkbox" id="photoAvailable" name="photoAvailable">
+            <label for="photoAvailable">Photo is available</label>
+        </p>
+        <p>
+            <label for="wardcode">Ward Code:</label><br>
+            <input type="number" id="wardcode" name="wardcode">
+        </p>
+        <button type="submit">Validate Complaint</button>
+        <button type="reset">Clear Form</button>
+    </form>
+
+    <div id="validationResult"></div>
+    </center>
+    <center>
+    <footer>
+        <p>&copy; 2026 CivicFix Team. All rights reserved.</p>
+    </footer>
+    </center>
+</body>
+</html>

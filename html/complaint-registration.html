@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Complaint Registration</title>
+</head>
+<body>
+    <center>
+    <h1>Complaint Registration</h1>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="complaint-validation.html">Complaint Validation</a> |
+        <a href="complaint-registration.html">Complaint Registration</a> |
+        <a href="status-tracking.html">Status Tracking</a> |
+        <a href="feedback-and-rating.html">Feedback and Rating</a>
+    </nav>
+    <hr>
+
+    <form id="registrationForm" action="/register" method="post" enctype="multipart/form-data">
+        <p>Choose problem type: 1-Road 2-Garbage 3-Street Light 4-Water 5-Drainage</p>
+        <p>
+            <label for="problemType">Problem Type:</label><br>
+            <select id="problemType" name="problemType" required>
+                <option value="">Choose a problem type</option> 
+                <option value="1">1 - Road</option>
+                <option value="2">2 - Garbage</option>
+                <option value="3">3 - Street Light</option>
+                <option value="4">4 - Water</option>
+                <option value="5">5 - Drainage</option>
+                <option value="other">Other</option>
+            </select>
+        </p>
+        <p>
+            <label for="otherIssue">If you selected Other, describe the issue:</label><br>
+            <textarea id="otherIssue" name="otherIssue" rows="3" cols="35"></textarea>
+        </p>
+        <p>
+            <label for="wardcode">Ward Code (1-100):</label><br>
+            <input type="number" id="wardcode" name="wardcode" min="1" max="100" required>
+        </p>
+        <p>
+            <label for="issuePhoto">Photo of the Issue:</label><br>
+            <input type="file" id="issuePhoto" name="issuePhoto" accept="image/*" required>
+        </p>
+        <p>
+            <label for="citizenIdProof">Citizen ID Proof (image or PDF):</label><br>
+            <input type="file" id="citizenIdProof" name="citizenIdProof" accept="image/*,.pdf" required>
+        </p>
+        <p>Uploaded files are checked by this demo server but are not stored.</p>
+        <button type="submit">Register Complaint</button>
+        <button type="reset">Clear Form</button>
+    </form>
+
+    <div id="registrationResult"><!-- REGISTRATION_RESULT --></div>
+    </center>
+    <center>
+    <footer>
+        <p>&copy; 2026 CivicFix Team. All rights reserved.</p>
+    </footer>
+    </center>
+</body>
+</html>
