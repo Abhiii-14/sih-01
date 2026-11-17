@@ -1,6 +1,6 @@
 # 🏛️ Civic Issue Reporting and Resolution Portal
 
-A simple, beginner-friendly web project that models how a citizen complaint travels from **submission** to **resolution and feedback**. It is built with **plain HTML and JavaScript only**, and every page follows a flowchart designed for the project. 🚀
+A simple, beginner-friendly static web project for reporting civic issues and reviewing their resolution. It is built with HTML, CSS and browser-side JavaScript. 🚀
 
 ---
 
@@ -9,7 +9,7 @@ A simple, beginner-friendly web project that models how a citizen complaint trav
 Citizens often face everyday problems such as damaged roads, uncollected garbage, broken street lights, water issues and blocked drainage. This project shows how a complaint system can handle those problems step by step:
 
 1. ✅ Check that the complaint is valid
-2. 📝 Register it with a unique ID and category
+2. 📝 Enter its details on the registration form
 3. 🔄 Track its status until it is fixed
 4. ⭐ Collect the citizen's rating and decide the final status
 
@@ -20,7 +20,7 @@ Each step is a separate web page, and all pages are connected through a common n
 ## ✨ Features
 
 - 🔍 **Input validation** for description, photo and ward code
-- 🆔 **Automatic complaint ID generation**
+- 🆔 **Browser-generated demo complaint ID** after a valid registration form submission
 - 🗂️ **Category mapping** for Road, Garbage, Street Light, Water, Drainage and Other
 - 🔁 **Status tracking loop** that keeps asking for updates until the complaint is resolved
 - ⭐ **Rating validation** that only accepts values from 1 to 5
@@ -47,9 +47,8 @@ At the end, the page shows **"Complaint Registered"** if the complaint is valid,
 
 ### 2️⃣ Complaint Registration: `complaint-registration.html`
 
-Creates a new complaint record.
+Provides a form for entering complaint details and generates a temporary complaint ID in the browser after validation. The static site does not save submissions.
 
-- 🆔 `ComplaintID = PreviousID + 1`
 - 🗂️ Category is chosen from the problem type:
 
 | Problem Type | Category |
@@ -60,9 +59,6 @@ Creates a new complaint record.
 | 4 | 🚰 Water |
 | 5 | 🌊 Drainage |
 | Anything else | 📦 Other |
-
-- 📌 Status is set to **Registered**
-- 🖥️ The page displays the Complaint ID, Category and Status
 
 ### 3️⃣ Status Tracking: `status-tracking.html`
 
@@ -130,13 +126,9 @@ complaint_system/
 
 ## ▶️ How to Run
 
-1. 📥 **Clone** the repository
-   ```bash
-   git clone https://github.com/<your-username>/<your-repo-name>.git
-   ```
-2. 📂 **Open** the folder in **VS Code**
-3. 🌐 **Open** `complaint-validation.html` in any browser, or right-click it and choose **Open with Live Server**
-4. 🧭 Use the navigation bar to move between modules
+1. 📂 **Open** the project folder in **VS Code**
+2. 🌐 Open `html/index.html` in a browser, or use the Live Server extension
+3. 🧭 Use the navigation bar to move between pages
 
 ---
 

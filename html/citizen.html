@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
     <title>CivicFix - Citizen Interface</title>
 </head>
 <body>
@@ -28,7 +30,7 @@
         <section id="report-issue">
             <h2>Report a Civic Issue</h2>
 
-            <form>
+            <form id="reportForm">
                 <p>
                     <label for="category">Issue Category: <strong>*</strong></label><br>
                     <select id="category" name="category" required>
@@ -42,21 +44,29 @@
                 <p>
                     <label for="description">Issue Description: <strong>*</strong></label><br>
                     <textarea id="description" name="description" rows="5" cols="45" minlength="10" maxlength="1000" required placeholder="Describe the issue clearly..."></textarea>
+                    <span class="field-hint" id="descriptionCount" aria-live="polite">0/1000 characters</span>
                 </p>
                 <p>
                     <label for="location">Location: <strong>*</strong></label><br>
-                    <input type="text" id="location" name="location" maxlength="180" required placeholder="Enter street, landmark and ward number">
+                    <input type="text" id="location" name="location" maxlength="180" required placeholder="Enter address or use your coordinates" aria-describedby="locationHint locationMessage">
+                    <button id="useCurrentLocation" class="location-button" type="button">Use my location</button>
+                    <span class="field-hint location-hint" id="locationHint">Location access requires browser permission and a secure page (localhost or HTTPS).</span>
                 </p>
+                <p class="form-feedback" id="locationMessage" role="status" aria-live="polite"></p>
                 <p>
                     <label for="photo">Upload Issue Photo: <strong>*</strong></label><br>
                     <input type="file" id="photo" name="photo" accept="image/*" required>
                 </p>
+                <p class="form-feedback" id="photoMessage" role="status" aria-live="polite"></p>
+                <img id="photoPreview" class="photo-preview" alt="Preview of the selected issue photo" hidden>
+                <button id="cancelPhoto" class="photo-cancel-button" type="button" hidden>Remove selected photo</button>
                 <p>
                     <label for="contact">Contact Number (Optional):</label><br>
                     <input type="tel" id="contact" name="contact" pattern="[0-9+() -]{7,18}" placeholder="Enter contact number">
                 </p>
                 <button type="submit">Submit Complaint</button>
                 <button type="reset">Clear Form</button>
+                <p class="form-feedback" id="reportMessage" role="status" aria-live="polite"></p>
             </form>
         </section>
 
@@ -80,7 +90,7 @@
         <section>
             <h2>Rate the Resolution</h2>
 
-            <form>
+            <form id="ratingForm">
                 <p>
                     <label for="rate_complaint_id">Complaint ID: <strong>*</strong></label><br>
                     <input type="text" id="rate_complaint_id" name="complaint_id" required placeholder="Example: CF-10294">
@@ -98,6 +108,7 @@
                     <input type="radio" id="star5" name="rating" value="5">
                     <label for="star5">5 Stars - Excellent</label>
                 </fieldset>
+                <p class="form-feedback" id="ratingMessage" role="status" aria-live="polite"></p>
                 <p>
                     <label for="feedback">Additional Comments (Optional):</label><br>
                     <textarea id="feedback" name="feedback" rows="4" cols="45" maxlength="500" placeholder="Share your feedback..."></textarea>

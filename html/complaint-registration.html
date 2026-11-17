@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
     <link rel="icon" type="image/png" href="favicon.png">
     <title>Complaint Registration</title>
 </head>
@@ -11,8 +14,8 @@
     <h1>Complaint Registration</h1>
     <nav>
         <a href="index.html">Home</a> |
-        <a href="complaint-validation.html">Complaint Validation</a> |
         <a href="complaint-registration.html">Complaint Registration</a> |
+        <a href="complaint-validation.html">Complaint Validation</a> |
         <a href="status-tracking.html">Status Tracking</a> |
         <a href="feedback-and-rating.html">Feedback and Rating</a> |
         <a href="citizen.html">Citizen Interface</a> |
@@ -21,7 +24,7 @@
     </nav>
     <hr>
 
-    <form id="registrationForm" action="/register" method="post" enctype="multipart/form-data">
+    <form id="registrationForm">
         <p>Choose problem type: 1-Road 2-Garbage 3-Street Light 4-Water 5-Drainage</p>
         <p>
             <label for="problemType">Problem Type:</label><br>
@@ -45,18 +48,24 @@
         </p>
         <p>
             <label for="issuePhoto">Photo of the Issue:</label><br>
-            <input type="file" id="issuePhoto" name="issuePhoto" accept="image/*" required>
+            <input type="file" id="issuePhoto" name="issuePhoto" accept="image/*" required aria-describedby="issuePhotoMessage">
         </p>
+        <p class="form-feedback" id="issuePhotoMessage" role="status" aria-live="polite"></p>
+        <img id="issuePhotoPreview" class="photo-preview" alt="Preview of the selected issue photo" hidden>
+        <button id="cancelIssuePhoto" class="photo-cancel-button" type="button" hidden>Remove issue photo</button>
         <p>
             <label for="citizenIdProof">Citizen ID Proof (image or PDF):</label><br>
-            <input type="file" id="citizenIdProof" name="citizenIdProof" accept="image/*,.pdf" required>
+            <input type="file" id="citizenIdProof" name="citizenIdProof" accept="image/*,.pdf" required aria-describedby="citizenIdProofMessage">
         </p>
-        <p>Uploaded files are checked by this demo server but are not stored.</p>
+        <p class="form-feedback" id="citizenIdProofMessage" role="status" aria-live="polite"></p>
+        <img id="citizenIdProofPreview" class="photo-preview" alt="Preview of the selected citizen ID proof" hidden>
+        <button id="cancelCitizenIdProof" class="photo-cancel-button" type="button" hidden>Remove ID proof</button>
+        <p>Frontend demo only: complaint details and files are not uploaded or saved.</p>
         <button type="submit">Register Complaint</button>
         <button type="reset">Clear Form</button>
     </form>
 
-    <div id="registrationResult"><!-- REGISTRATION_RESULT --></div>
+    <div id="registrationResult" class="form-feedback" role="status" aria-live="polite"></div>
     </center>
     <center>
     <footer>
