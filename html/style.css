@@ -1,0 +1,461 @@
+/* ==========================================================
+   CIVICFIX - DARK CIVIC PORTAL THEME
+   ========================================================== */
+
+:root {
+    --bg: #121212;
+    --surface: #1a1a1a;
+    --surface-hover: #222222;
+    --ink: #f3f4f6;
+    --muted: #9ca3af;
+    --primary: #dc2626;
+    --primary-hover: #b91c1c;
+    --primary-soft: rgba(220, 38, 38, 0.15);
+    --border: #374151;
+    --border-light: #262626;
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    background-image: radial-gradient(ellipse at top right, rgba(220, 38, 38, 0.14), transparent 38rem);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    margin: 0;
+    padding: 24px;
+    line-height: 1.6;
+}
+
+/* Main Container / Wrapper */
+center {
+    display: block;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: var(--surface);
+    color: var(--ink);
+    padding: 36px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    text-align: left;
+}
+
+/* Header & Typography */
+header {
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+}
+
+h1 {
+    color: var(--ink);
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 6px 0;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 24px 0 16px 0;
+}
+
+p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+/* Navigation */
+nav {
+    margin: 16px 0;
+    padding: 12px;
+    background-color: var(--surface-hover);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+nav a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Sections & Forms */
+section {
+    margin: 24px 0;
+    padding: 28px;
+    background-color: var(--surface-hover);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+form {
+    margin: 16px 0;
+}
+
+label {
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 4px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--surface);
+    color: var(--ink);
+    font-size: 14px;
+    font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+input[type="file"] {
+    margin: 8px 0 16px 0;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: var(--primary);
+    margin-right: 6px;
+}
+
+fieldset {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 18px;
+    background-color: var(--surface);
+}
+
+legend {
+    font-weight: bold;
+    color: var(--primary);
+    padding: 0 6px;
+}
+
+/* Buttons */
+button {
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+button[type="reset"] {
+    background-color: var(--border);
+    color: var(--ink);
+}
+
+button[type="reset"]:hover {
+    background-color: var(--muted);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    background-color: var(--surface);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid var(--border);
+    padding: 12px 14px;
+    font-size: 13px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--surface-hover);
+    color: var(--primary);
+}
+
+/* Dividers & Footer */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--border);
+    margin: 28px 0;
+}
+
+footer {
+    margin-top: 35px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* Landing page */
+
+.landing-body > footer {
+    max-width: 1000px;
+    margin: 16px auto 0;
+    padding: 12px 0 4px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+}
+
+.landing-body > footer p {
+    margin: 0;
+}
+
+.landing-body > header {
+    margin-top: 20px;
+}
+
+.landing-body > nav {
+    padding: 8px;
+}
+
+.landing-body > nav a {
+    margin: 0 6px;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+.landing-body > nav a:hover {
+    background-color: var(--surface-hover);
+}
+
+.landing-body > nav a[aria-current="page"] {
+    background-color: var(--surface-hover);
+    color: var(--ink);
+}
+
+.landing-main {
+    max-width: 1000px;
+}
+
+.landing-main > section {
+    max-width: none;
+    margin: 0 auto;
+    padding: 24px 4px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+}
+
+.landing-main > section h2 {
+    color: var(--ink);
+}
+
+.landing-main > .landing-hero {
+    padding: 48px 4px;
+}
+
+.hero-copy h2 {
+    max-width: 700px;
+    margin: 0 0 14px;
+    color: var(--ink);
+    font-size: clamp(32px, 5vw, 46px);
+    line-height: 1.15;
+}
+
+.hero-copy > p {
+    max-width: 680px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.hero-actions a,
+.portal-links a {
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.hero-actions a {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 1px solid var(--primary);
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.hero-actions a:first-child {
+    background-color: var(--primary);
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(220, 38, 38, 0.18);
+}
+
+.hero-actions a:last-child {
+    background-color: transparent;
+    color: var(--ink);
+}
+
+.hero-actions a:hover {
+    border-color: var(--primary-hover);
+    background-color: var(--primary-hover);
+    color: #ffffff;
+}
+
+.workflow-steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.workflow-steps li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 4px 8px;
+    margin: 0;
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+}
+
+.step-number {
+    grid-row: span 2;
+    display: grid;
+    width: 26px;
+    height: 26px;
+    place-items: center;
+    background-color: var(--primary-soft);
+    border-radius: 50%;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.workflow-steps strong {
+    color: var(--ink);
+}
+
+.workflow-steps li > span:last-child {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.portal-section h2,
+.setup-section h2 {
+    margin-bottom: 12px;
+}
+
+.portal-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.portal-links a {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 14px 16px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.portal-links a:hover {
+    background-color: var(--surface-hover);
+    border-color: var(--primary);
+}
+
+.portal-links a strong {
+    font-size: 14px;
+}
+
+.portal-links a span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.setup-section a {
+    color: #ff8a98;
+    font-weight: 600;
+}
+
+.setup-section a:hover {
+    color: #ffffff;
+}
+
+.hero-actions a:focus-visible,
+.portal-links a:focus-visible {
+    outline: 2px solid #ff8a98;
+    outline-offset: 3px;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 800px) {
+    .workflow-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .portal-links {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .landing-body > nav a {
+        margin: 0 2px;
+        padding: 6px;
+    }
+
+    .landing-main > .landing-hero {
+        padding: 34px 4px;
+    }
+
+    .workflow-steps {
+        grid-template-columns: 1fr;
+    }
+
+}

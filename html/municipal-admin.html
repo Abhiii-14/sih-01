@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CivicFix - Municipal Admin Interface</title>
+</head>
+<body>
+    <center>
+    <header>
+        <h1>CivicFix - Municipal Admin Interface</h1>
+        <p>Complaint Classification and Field Worker Assignment</p>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="complaint-validation.html">Complaint Validation</a> |
+            <a href="complaint-registration.html">Complaint Registration</a> |
+            <a href="status-tracking.html">Status Tracking</a> |
+            <a href="feedback-and-rating.html">Feedback and Rating</a> |
+            <a href="citizen.html">Citizen Interface</a> |
+            <a href="field-worker.html">Field Worker Interface</a> |
+            <a href="municipal-admin.html">Municipal Admin</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+            <h2>Classify Complaints</h2>
+            <p><em>As an admin, I want to classify complaints by category and ward so that they reach the right department.</em></p>
+            <form action="#" method="post">
+                <p>
+                    <label for="admin_complaint_id">Select Unclassified Complaint: <strong>*</strong></label><br>
+                    <select id="admin_complaint_id" name="complaint_id" required>
+                        <option value="">-- Select Complaint --</option>
+                        <option value="CF-9901">CF-9901 - Unassigned Pothole</option>
+                        <option value="CF-9902">CF-9902 - Broken Pipe</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="department">Department Category: <strong>*</strong></label><br>
+                    <select id="department" name="department" required>
+                        <option value="">-- Select Department --</option>
+                        <option value="engineering">Engineering and Roads</option>
+                        <option value="sanitation">Sanitation and Health</option>
+                        <option value="electrical">Electrical / Streetlights</option>
+                        <option value="water">Water Supply and Sewage</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="ward_no">Assigned Ward Number: <strong>*</strong></label><br>
+                    <input type="number" id="ward_no" name="ward_no" min="1" max="100" required placeholder="Enter ward number">
+                </p>
+                <button type="submit">Save Classification</button>
+                <button type="reset">Clear Form</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Assign Complaint to Field Worker</h2>
+
+            <form action="#" method="post">
+                <p>
+                    <label for="classified_complaint_id">Select Classified Complaint: <strong>*</strong></label><br>
+                    <select id="classified_complaint_id" name="complaint_id" required>
+                        <option value="">-- Select Complaint --</option>
+                        <option value="CF-9901">CF-9901 - Ward 12 - Road Department</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="field_worker">Assign Field Worker / Team Lead: <strong>*</strong></label><br>
+                    <select id="field_worker" name="field_worker" required>
+                        <option value="">-- Select Available Personnel --</option>
+                        <option value="fw_01">Ramesh Kumar - Roads Crew A</option>
+                        <option value="fw_02">Suresh Vignesh - Roads Crew B</option>
+                        <option value="fw_03">Amit Singh - Sanitation Lead</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="due_date">Target Completion Date: <strong>*</strong></label><br>
+                    <input type="date" id="due_date" name="due_date" required>
+                </p>
+                <p>
+                    <label for="priority">Task Priority:</label><br>
+                    <select id="priority" name="priority">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                </p>
+                <button type="submit">Assign Task</button>
+                <button type="reset">Clear Form</button>
+            </form>
+        </section>
+
+        <hr>
+
+
+    </main>
+
+    <hr>
+    <footer><p>CivicFix - Municipal Administration</p></footer>
+    </center>
+</body>
+</html>

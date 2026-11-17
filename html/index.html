@@ -2,28 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CivicFix helps residents report local issues and follow them through review, assignment, and resolution.">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="favicon.png">
-    <title>Citizen Complaint Management System</title>
+    <title>CivicFix - Smart Civic Issue Reporting</title>
 </head>
-<body>
-    <center>
-    <h1>Citizen Complaint Management System</h1>
-    <p>Use the modules below to validate, register, track, and rate a complaint.</p>
+<body class="landing-body">
+    <header>
+        <h1>CivicFix</h1>
+        <p>Smart Civic Issue Reporting and Resolution Portal</p>
+    </header>
 
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="complaint-validation.html">Complaint Validation</a> |
-        <a href="complaint-registration.html">Complaint Registration</a> |
-        <a href="status-tracking.html">Status Tracking</a> |
+    <nav aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="complaint-registration.html">Complaint Registration</a>
+        <a href="complaint-validation.html">Complaint Validation</a>
+        <a href="status-tracking.html">Status Tracking</a>
         <a href="feedback-and-rating.html">Feedback and Rating</a>
+        <a href="citizen.html">Citizen Interface</a>
+        <a href="field-worker.html">Field Worker Interface</a>
+        <a href="municipal-admin.html">Municipal Admin</a>
     </nav>
-    <hr>
-    <p>Start the local server with <code>python complaint_server.py</code>, then open <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>. Complaint IDs are stored in a local database and kept unique.</p>
-    </center>
-    <center>
+
+    <main class="landing-main">
+        <section class="landing-hero">
+            <div class="hero-copy">
+                <h2>Report a civic issue.<br>Track it to a fix.</h2>
+                <p>Report local problems like potholes, broken streetlights, garbage, or water leaks. Add a location and photo, then follow the complaint through resolution.</p>
+                <div class="hero-actions">
+                    <a href="citizen.html#report-issue">Report an issue</a>
+                    <a href="status-tracking.html">Track a complaint</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="workflow-section">
+            <h2>How it works</h2>
+            <ol class="workflow-steps">
+                <li><span class="step-number">01</span><strong>Report</strong><span>Describe the issue and add its location.</span></li>
+                <li><span class="step-number">02</span><strong>Review</strong><span>Staff classify and route the complaint.</span></li>
+                <li><span class="step-number">03</span><strong>Resolve</strong><span>A field worker completes the assigned task.</span></li>
+                <li><span class="step-number">04</span><strong>Follow up</strong><span>Check progress and leave feedback.</span></li>
+            </ol>
+        </section>
+
+        <section class="portal-section">
+            <h2>Choose a portal</h2>
+            <div class="portal-links">
+                <a href="citizen.html">
+                    <strong>Resident</strong>
+                    <span>Report issues and track progress</span>
+                </a>
+                <a href="municipal-admin.html">
+                    <strong>Municipal admin</strong>
+                    <span>Review complaints and assign work</span>
+                </a>
+                <a href="field-worker.html">
+                    <strong>Field worker</strong>
+                    <span>View tasks and submit resolutions</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="setup-section">
+            <h2>Run locally</h2>
+            <p>Start <code>python complaint_server.py</code>, then visit <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p>
+        </section>
+    </main>
+
     <footer>
         <p>&copy; 2026 CivicFix Team. All rights reserved.</p>
     </footer>
-    </center>
 </body>
 </html>

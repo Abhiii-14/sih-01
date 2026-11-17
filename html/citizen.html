@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CivicFix - Citizen Interface</title>
+</head>
+<body>
+    <center>
+    <header>
+        <h1>CivicFix - Citizen Interface</h1>
+        <p>Smart Civic Issue Reporting and Resolution Portal</p>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="complaint-validation.html">Complaint Validation</a> |
+            <a href="complaint-registration.html">Complaint Registration</a> |
+            <a href="status-tracking.html">Status Tracking</a> |
+            <a href="feedback-and-rating.html">Feedback and Rating</a> |
+            <a href="citizen.html">Citizen Interface</a> |
+            <a href="field-worker.html">Field Worker Interface</a> |
+            <a href="municipal-admin.html">Municipal Admin</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <section id="report-issue">
+            <h2>Report a Civic Issue</h2>
+
+            <form>
+                <p>
+                    <label for="category">Issue Category: <strong>*</strong></label><br>
+                    <select id="category" name="category" required>
+                        <option value="">-- Select Category --</option>
+                        <option value="pothole">Pothole / Road Repair</option>
+                        <option value="streetlight">Streetlight Failure</option>
+                        <option value="garbage">Garbage Accumulation</option>
+                        <option value="water">Sewage / Water Leakage</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="description">Issue Description: <strong>*</strong></label><br>
+                    <textarea id="description" name="description" rows="5" cols="45" minlength="10" maxlength="1000" required placeholder="Describe the issue clearly..."></textarea>
+                </p>
+                <p>
+                    <label for="location">Location: <strong>*</strong></label><br>
+                    <input type="text" id="location" name="location" maxlength="180" required placeholder="Enter street, landmark and ward number">
+                </p>
+                <p>
+                    <label for="photo">Upload Issue Photo: <strong>*</strong></label><br>
+                    <input type="file" id="photo" name="photo" accept="image/*" required>
+                </p>
+                <p>
+                    <label for="contact">Contact Number (Optional):</label><br>
+                    <input type="tel" id="contact" name="contact" pattern="[0-9+() -]{7,18}" placeholder="Enter contact number">
+                </p>
+                <button type="submit">Submit Complaint</button>
+                <button type="reset">Clear Form</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Track Complaint Status</h2>
+
+            <form action="#" method="get">
+                <p>
+                    <label for="complaint_id">Complaint ID: <strong>*</strong></label><br>
+                    <input type="text" id="complaint_id" name="complaint_id" required pattern="CF-[A-Za-z0-9-]+" placeholder="Example: CF-10294">
+                </p>
+                <button type="submit">Track Status</button>
+                <button type="reset">Clear</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Rate the Resolution</h2>
+
+            <form>
+                <p>
+                    <label for="rate_complaint_id">Complaint ID: <strong>*</strong></label><br>
+                    <input type="text" id="rate_complaint_id" name="complaint_id" required placeholder="Example: CF-10294">
+                </p>
+                <fieldset>
+                    <legend>Service Quality Rating: <strong>*</strong></legend>
+                    <input type="radio" id="star1" name="rating" value="1" required>
+                    <label for="star1">1 Star - Poor</label><br>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2">2 Stars</label><br>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3">3 Stars - Average</label><br>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4">4 Stars</label><br>
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5">5 Stars - Excellent</label>
+                </fieldset>
+                <p>
+                    <label for="feedback">Additional Comments (Optional):</label><br>
+                    <textarea id="feedback" name="feedback" rows="4" cols="45" maxlength="500" placeholder="Share your feedback..."></textarea>
+                </p>
+                <button type="submit">Submit Rating</button>
+                <button type="reset">Clear Form</button>
+            </form>
+        </section>
+    </main>
+
+    <hr>
+    <footer><p><a href="citizen.html">Citizen Interface</a> | CivicFix</p></footer>
+    </center>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CivicFix - Field Worker Interface</title>
+</head>
+<body>
+    <center>
+    <header>
+        <h1>CivicFix - Field Worker Interface</h1>
+        <p>Assigned Task Overview and Resolution Submission</p>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="complaint-validation.html">Complaint Validation</a> |
+            <a href="complaint-registration.html">Complaint Registration</a> |
+            <a href="status-tracking.html">Status Tracking</a> |
+            <a href="feedback-and-rating.html">Feedback and Rating</a> |
+            <a href="citizen.html">Citizen Interface</a> |
+            <a href="field-worker.html">Field Worker Interface</a> |
+            <a href="municipal-admin.html">Municipal Admin</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+            <h2>View Assigned Tasks</h2>
+
+            <form>
+                <p>
+                    <label for="worker_id">Field Worker Employee ID: <strong>*</strong></label><br>
+                    <input type="text" id="worker_id" name="worker_id" required maxlength="40" placeholder="Enter your employee ID">
+                </p>
+                <button type="submit">Fetch My Tasks</button>
+                <button type="reset">Clear</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Assigned Task Details</h2>
+            <p>The assigned task list can be displayed here after connecting the interface to the application database.</p>
+            <table border="1" cellpadding="8">
+                <caption>Example Active Task</caption>
+                <thead>
+                    <tr>
+                        <th>Complaint ID</th>
+                        <th>Task</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CF-9901</td>
+                        <td>Pothole Repair</td>
+                        <td>Cross Street, Ward 12</td>
+                        <td>Assigned</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Resolve Task and Upload Verification</h2>
+
+            <form>
+                <p>
+                    <label for="task_complaint_id">Select Active Task ID: <strong>*</strong></label><br>
+                    <select id="task_complaint_id" name="complaint_id" required>
+                        <option value="">-- Select Active Task --</option>
+                        <option value="CF-9901">CF-9901 - Pothole Repair - Cross Street</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="after_photo">Upload After-Action Photo: <strong>*</strong></label><br>
+                    <input type="file" id="after_photo" name="after_photo" accept="image/*" required>
+                </p>
+                <p>
+                    <label for="work_notes">Work Completion Notes: <strong>*</strong></label><br>
+                    <textarea id="work_notes" name="work_notes" rows="5" cols="45" minlength="5" maxlength="1000" required placeholder="Describe the work completed and materials used..."></textarea>
+                </p>
+                <p>
+                    <label for="completion_date">Completion Date:</label><br>
+                    <input type="date" id="completion_date" name="completion_date">
+                </p>
+                <button type="submit">Submit Resolution</button>
+                <button type="reset">Clear Form</button>
+            </form>
+        </section>
+    </main>
+
+    <hr>
+    <footer><p>CivicFix - Field Worker Portal</p></footer>
+    </center>
+</body>
+</html>

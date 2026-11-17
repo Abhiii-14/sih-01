@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Smart Civic Issue Reporting and Resolution Portal (CivicFix)</title>
+</head>
+<body>
+
+    <h1>Smart Civic Issue Reporting and Resolution Portal (CivicFix)</h1>
+    <p><strong>Laboratory Reference Record (Ex. No. 3)</strong></p>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="complaint-validation.html">Complaint Validation</a> |
+        <a href="complaint-registration.html">Complaint Registration</a> |
+        <a href="status-tracking.html">Status Tracking</a> |
+        <a href="feedback-and-rating.html">Feedback and Rating</a> |
+        <a href="forms.html">All Forms</a> |
+        <a href="citizen.html">Citizen Interface</a> |
+        <a href="field-worker.html">Field Worker Interface</a> |
+        <a href="municipal-admin.html">Municipal Admin</a>
+    </nav>
+    <hr>
+
+    <!-- SECTION 1: CITIZEN / RESIDENT FORMS -->
+    <h2>1. Citizen / Resident Interface</h2>
+
+    <h3>US-01: Report a Civic Issue (Pothole)</h3>
+    <p><em>Requirement: As a citizen, I want to report a pothole with a photo and location so that the authorities can see exactly where the problem is.</em></p>
+    <form>
+        <label for="category">Category:</label><br>
+        <select id="category" name="category" required>
+            <option value="">--Select Category--</option>
+            <option value="pothole">Pothole / Road Repair</option>
+            <option value="streetly">Streetlight Failure</option>
+            <option value="garbage">Garbage Accumulation</option>
+            <option value="water">Sewage / Water Leakage</option>
+        </select>
+        <br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="40" required placeholder="Describe the issue here..."></textarea>
+        <br><br>
+
+        <label for="location">Location:</label><br>
+        <input type="text" id="location" name="location" required placeholder="Enter ward, street name, or coordinates">
+        <br><br>
+
+        <label for="photo">Upload Photo:</label><br>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+        <br><br>
+
+        <input type="submit" value="Submit Complaint">
+    </form>
+
+    <h3>US-02: Track Complaint Status</h3>
+    <p><em>Requirement: As a citizen, I want to track my complaint status so that I know whether action is being taken.</em></p>
+    <form>
+        <label for="complaint_id">Enter Complaint ID:</label><br>
+        <input type="text" id="complaint_id" name="complaint_id" required placeholder="e.g., CF-10294">
+        <br><br>
+        <input type="submit" value="Track Status">
+    </form>
+
+    <h3>US-08: Rate the Resolution</h3>
+    <p><em>Requirement: As a citizen, I want to rate the resolution from 1 to 5 stars so that service quality can be measured. (Note: Only available for 'Resolved' status)</em></p>
+    <form>
+        <label for="rate_complaint_id">Complaint ID:</label><br>
+        <input type="text" id="rate_complaint_id" name="rate_complaint_id" required placeholder="e.g., CF-10294">
+        <br><br>
+
+        <label>Service Quality Rating:</label><br>
+        <input type="radio" id="star1" name="rating" value="1"> <label for="star1">1 Star (Poor)</label><br>
+        <input type="radio" id="star2" name="rating" value="2"> <label for="star2">2 Stars</label><br>
+        <input type="radio" id="star3" name="rating" value="3"> <label for="star3">3 Stars</label><br>
+        <input type="radio" id="star4" name="rating" value="4"> <label for="star4">4 Stars</label><br>
+        <input type="radio" id="star5" name="rating" value="5"> <label for="star5">5 Stars (Excellent)</label><br>
+        <br>
+
+        <label for="rating_feedback">Additional Comments (Optional):</label><br>
+        <textarea id="rating_feedback" name="rating_feedback" rows="3" cols="40"></textarea>
+        <br><br>
+
+        <input type="submit" value="Submit Rating">
+    </form>
+
+    <hr>
+
+    <!-- SECTION 2: MUNICIPAL ADMIN FORMS -->
+    <h2>2. Municipal Admin Interface</h2>
+
+    <h3>US-03: Classify Complaints</h3>
+    <p><em>Requirement: As an admin, I want to classify complaints by category and ward so that they reach the right department.</em></p>
+    <form>
+        <label for="admin_complaint_id">Select Unclassified Complaint ID:</label><br>
+        <select id="admin_complaint_id" name="admin_complaint_id" required>
+            <option value="">--Select Item--</option>
+            <option value="CF-9901">CF-9901 (Unassigned Pothole)</option>
+            <option value="CF-9902">CF-9902 (Broken Pipe)</option>
+        </select>
+        <br><br>
+
+        <label for="assign_category">Department Category:</label><br>
+        <select id="assign_category" name="assign_category" required>
+            <option value="">--Select Department--</option>
+            <option value="engineering">Engineering & Roads</option>
+            <option value="sanitation">Sanitation & Health</option>
+            <option value="electrical">Electrical / Streetlights</option>
+            <option value="water_board">Water Supply & Sewage</option>
+        </select>
+        <br><br>
+
+        <label for="ward_no">Assigned Ward Number:</label><br>
+        <input type="number" id="ward_no" name="ward_no" min="1" max="100" required placeholder="Ward No.">
+        <br><br>
+
+        <input type="submit" value="Save Classification">
+    </form>
+
+    <h3>US-04: Assign Complaint to Field Worker</h3>
+    <p><em>Requirement: As an admin, I want to assign a complaint to a field worker so that the work is done on time.</em></p>
+    <form>
+        <label for="classified_complaint_id">Select Classified Complaint:</label><br>
+        <select id="classified_complaint_id" name="classified_complaint_id" required>
+            <option value="">--Select Complaint--</option>
+            <option value="CF-9901">CF-9901 (Ward 12 - Road Department)</option>
+        </select>
+        <br><br>
+
+        <label for="field_worker">Assign Field Worker / Team Lead:</label><br>
+        <select id="field_worker" name="field_worker" required>
+            <option value="">--Select Available Personnel--</option>
+            <option value="fw_01">Ramesh Kumar (Roads Crew A)</option>
+            <option value="fw_02">Suresh Vignesh (Roads Crew B)</option>
+            <option value="fw_03">Amit Singh (Sanitation Lead)</option>
+        </select>
+        <br><br>
+
+        <label for="due_date">Target Completion Date:</label><br>
+        <input type="date" id="due_date" name="due_date" required>
+        <br><br>
+
+        <input type="submit" value="Assign Task">
+    </form>
+
+    <hr>
+
+    <!-- SECTION 3: FIELD WORKER FORMS -->
+    <h2>3. Field Worker Interface</h2>
+
+    <h3>US-06: Task Overview login confirmation</h3>
+    <p><em>Requirement: As a field worker, I want to see my assigned tasks so that I can plan my day.</em></p>
+    <form>
+        <label for="worker_id">Field Worker Login ID:</label><br>
+        <input type="text" id="worker_id" name="worker_id" required placeholder="Enter Employee ID">
+        <br><br>
+        <input type="submit" value="Fetch My Tasks">
+    </form>
+
+    <h3>US-07: Resolve Task & Upload Verification</h3>
+    <p><em>Requirement: As a field worker, I want to mark a task resolved with an "after" photo so that the citizen and admin can see proof of the repair.</em></p>
+    <form>
+        <label for="task_complaint_id">Select Active Task ID:</label><br>
+        <select id="task_complaint_id" name="task_complaint_id" required>
+            <option value="">--Select Task--</option>
+            <option value="CF-9901">CF-9901 (Pothole Repair - Cross Street)</option>
+        </select>
+        <br><br>
+
+        <label for="after_photo">Upload "After" Action Photo:</label><br>
+        <input type="file" id="after_photo" name="after_photo" accept="image/*" required>
+        <br><br>
+
+        <label for="work_notes">Work Completion Notes:</label><br>
+        <textarea id="work_notes" name="work_notes" rows="3" cols="40" placeholder="Provide details on materials used or work done..."></textarea>
+        <br><br>
+
+        <input type="submit" value="Mark Task as Resolved">
+    </form>
+
+</body>
+</html>
