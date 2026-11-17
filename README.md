@@ -1,6 +1,6 @@
-# 🏛️ Civic Issue Reporting and Resolution Portal
+# CivicFix - Smart Civic Issue Reporting and Resolution Portal
 
-A simple, beginner-friendly static web project for reporting civic issues and reviewing their resolution. It is built with HTML, CSS and browser-side JavaScript. 🚀
+CivicFix is a static, browser-based civic issue reporting and resolution portal. It demonstrates complaint validation, registration, status tracking, municipal assignment, field-worker resolution and citizen feedback using HTML, CSS and JavaScript.
 
 ---
 
@@ -19,20 +19,22 @@ Each step is a separate web page, and all pages are connected through a common n
 
 ## ✨ Features
 
-- 🔍 **Input validation** for description, photo and ward code
-- 🆔 **Browser-generated demo complaint ID** after a valid registration form submission
-- 🗂️ **Category mapping** for Road, Garbage, Street Light, Water, Drainage and Other
-- 🔁 **Status tracking loop** that keeps asking for updates until the complaint is resolved
-- ⭐ **Rating validation** that only accepts values from 1 to 5
-- 🔓 **Final status decision** (Closed or Reopened) based on the rating
-- 🧭 **Navigation header** and "Next" links on every page
-- 🪶 **Lightweight**: no frameworks, no libraries, no extra files
+- Responsive landing page and shared navigation
+- Complaint validation and registration
+- Browser-generated demo complaint IDs
+- Interactive status tracking
+- Citizen feedback and 1-5 star ratings
+- Municipal complaint classification and worker assignment
+- Field-worker task and resolution interfaces
+- Local JavaScript, CSS and Bootstrap assets; no backend required
 
 ---
 
 ## 🧩 Modules
 
-### 1️⃣ Complaint Validation: `complaint-validation.html`
+### 1️⃣ Complaint Validation
+
+[`html/complaint-validation.html`](html/complaint-validation.html) checks the description, photo and ward code before accepting a complaint.
 
 Checks whether a complaint can be accepted.
 
@@ -45,7 +47,9 @@ Checks whether a complaint can be accepted.
 
 At the end, the page shows **"Complaint Registered"** if the complaint is valid, or **"Invalid Complaint- Try Again"** if it is not.
 
-### 2️⃣ Complaint Registration: `complaint-registration.html`
+### 2️⃣ Complaint Registration
+
+[`html/complaint-registration.html`](html/complaint-registration.html) collects issue details and generates a temporary complaint ID in the browser.
 
 Provides a form for entering complaint details and generates a temporary complaint ID in the browser after validation. The static site does not save submissions.
 
@@ -60,7 +64,9 @@ Provides a form for entering complaint details and generates a temporary complai
 | 5 | 🌊 Drainage |
 | Anything else | 📦 Other |
 
-### 3️⃣ Status Tracking: `status-tracking.html`
+### 3️⃣ Status Tracking
+
+[`html/status-tracking.html`](html/status-tracking.html) follows a complaint until it is resolved.
 
 Follows a complaint until it is fixed.
 
@@ -70,7 +76,9 @@ Follows a complaint until it is fixed.
 - ⏳ Any other input shows **"Complaint Still in Progress"**
 - 🖥️ The page then displays the Complaint ID, Status and Category
 
-### 4️⃣ Feedback and Rating: `feedback-and-rating.html`
+### 4️⃣ Feedback and Rating
+
+[`html/feedback-and-rating.html`](html/feedback-and-rating.html) collects feedback after resolution.
 
 Collects the citizen's feedback after resolution.
 
@@ -86,6 +94,12 @@ Collects the citizen's feedback after resolution.
 - 🖥️ The page displays the Complaint ID, Rating and Final Status
 
 ---
+
+### 5️⃣ Portals
+
+- [`html/citizen.html`](html/citizen.html) - resident reporting and rating
+- [`html/municipal-admin.html`](html/municipal-admin.html) - classify and assign complaints
+- [`html/field-worker.html`](html/field-worker.html) - view and resolve assigned tasks
 
 ## 🔀 Project Flow
 
@@ -104,13 +118,23 @@ Collects the citizen's feedback after resolution.
 ## 📂 Folder Structure
 
 ```
-complaint_system/
+html/
 │
-├── 📄 complaint-validation.html
-├── 📄 complaint-registration.html
-├── 📄 status-tracking.html
-├── 📄 feedback-and-rating.html
-└── 📘 README.md
+├── index.html
+├── citizen.html
+├── complaint-validation.html
+├── complaint-registration.html
+├── status-tracking.html
+├── feedback-and-rating.html
+├── municipal-admin.html
+├── field-worker.html
+├── forms.html
+├── app.js
+├── style.css
+└── bootstrap.min.css
+
+images/
+└── favicon.png
 ```
 
 ---
@@ -120,15 +144,18 @@ complaint_system/
 | Technology | Purpose |
 |---|---|
 | 🌐 HTML5 | Page structure, forms and navigation |
-| ⚡ JavaScript | Validation, loops and decision logic |
+| 🎨 CSS3 | Responsive layout and component styling |
+| ⚡ JavaScript | Validation, interactions and demo workflows |
+| 🅱️ Bootstrap | Local Bootstrap utility and component CSS |
 
 ---
 
 ## ▶️ How to Run
 
-1. 📂 **Open** the project folder in **VS Code**
-2. 🌐 Open `html/index.html` in a browser, or use the Live Server extension
-3. 🧭 Use the navigation bar to move between pages
+1. Open the project folder in VS Code.
+2. Open [`html/index.html`](html/index.html) in a browser, or use the Live Server extension.
+3. Use the navigation bar to move between citizen, admin and field-worker pages.
+4. GitHub Actions runs a static asset and JavaScript syntax check after each push.
 
 ---
 
